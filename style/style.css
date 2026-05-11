@@ -1,0 +1,154 @@
+/* змінні */
+:root {
+  --color: brown;
+  --color-shadow: gray; /* колір тіні*/
+  --color-background: #f0f2f5; /* колір фону */
+  --color-background-main: white; /* колір фону */
+}
+
+/* загальні налаштування */
+* {
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  /*font-size: 25px;*/
+  line-height: 1.8;
+  /*background-color: var(--color-background);*/
+  /*padding: 0px;*/
+  margin: 0px;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+.main {
+  background-color: var(--color-background-main);
+  margin: 5% 10% 5% 10%;
+  padding: 70px;
+  box-shadow: 15px 15px 12px var(--color-shadow);
+  min-width: 400px;
+}
+
+.header {
+  display: flex;
+  gap: 50px;
+}
+
+.header1 {
+  margin-top: 30px;
+}
+.header2 {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Відступ між іконкою та текстом */
+}
+
+.my-photo {
+  margin-left: 20px;
+  width: 200px;
+  border: 2px solid var(--color-shadow);
+  border-radius: 50px 50px 50px 50px;
+  box-shadow: 4px 4px 14px 0px var(--color-shadow);
+}
+
+.my-photo:hover {
+  cursor: pointer;
+  border: 2px solid blue;
+  border-radius: 50px 50px 50px 200px;
+}
+
+.posada {
+  margin-top: 20px;
+}
+
+.period {
+  font-style: italic;
+  color: gray;
+}
+
+.ul li::marker {
+  color: gray;
+  font-size: 1em;
+}
+
+h2,
+br {
+  margin: 50px 0px 0px 0px;
+  padding: 0px 0px;
+}
+
+/* посилання */
+a {
+  color: var(--color);
+  text-decoration: none; /* без підкреслення */
+}
+a:hover {
+  color: darkblue;
+}
+
+footer {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.ico {
+  height: 20px;
+  width: 20px;
+}
+
+/* кнопка "до верху" */
+.up-menu {
+  color: brown;
+  position: fixed;
+  height: 30px;
+  width: 100px;
+  right: 20px;
+  bottom: 20px;
+  border: 2px solid gray;
+  border-radius: 20px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 8px 8px 18px 0px var(--color-shadow);
+  display: flex;
+  justify-content: center; /* горизонтальне центрування */
+  align-items: center; /* вертикальне центрування */
+
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  /* Налаштування анімації прокрутки */
+  animation: show-on-scroll linear;
+  animation-timeline: scroll(root); /* Скрол всієї сторінки */
+  animation-range: 30% 100%; /* Почати появу на 40%, повністю відобразити на 50% */
+}
+
+.up-menu:hover {
+  cursor: pointer;
+}
+
+@keyframes show-on-scroll {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    display: block;
+    text-align: center;
+  }
+  .header2 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.top-bar {
+  position: sticky;
+  top: 0px;
+  border: 2px salmon solid;
+}
